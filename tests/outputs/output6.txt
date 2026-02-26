@@ -1,0 +1,27 @@
+Command: /home/shyam/Desktop/Projects/compiler/main /home/shyam/Desktop/Projects/compiler/tests/test6.c
+----------------------------------------
+Parsed 9 instructions from GIMPLE
+Printed 9 non-dead instructions
+Printed 9 non-dead instructions
+Original GIMPLE:
+x = 3;
+if (x > 0) goto D.1946;
+goto D.1947;
+D.1946:
+D.1948 = 1;
+x = x + 100;
+D.1947:
+D.1948 = 0;
+D.1948 = 0;
+Optimization completed in 1 iterations.
+
+Optimized GIMPLE:
+x = 3;
+if (x > 0) goto D.1946;
+goto D.1947;
+D.1946:
+D.1948 = 1;
+x = x + 100;
+D.1947:
+D.1948 = 0;
+D.1948 = 0;

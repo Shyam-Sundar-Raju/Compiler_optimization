@@ -1,0 +1,40 @@
+Command: /home/shyam/Desktop/Projects/compiler/main /home/shyam/Desktop/Projects/compiler/tests/test9.c
+----------------------------------------
+Parsed 16 instructions from GIMPLE
+Printed 16 non-dead instructions
+Printed 15 non-dead instructions
+Original GIMPLE:
+sum = 0;
+a = 4;
+b = 5;
+i = 0;
+goto D.1951;
+D.1950:
+_1 = a * b;
+_2 = sum + _1;
+sum = i + _2;
+i = i + 1;
+D.1951:
+if (i <= 9) goto D.1950;
+goto D.1948;
+D.1948:
+D.1953 = sum;
+D.1953 = 0;
+Optimization completed in 3 iterations.
+
+Optimized GIMPLE:
+sum = 0;
+a = 4;
+b = 5;
+i = 0;
+goto D.1951;
+D.1950:
+_2 = sum + 20;
+sum = i + _2;
+i = i + 1;
+D.1951:
+if (i <= 9) goto D.1950;
+goto D.1948;
+D.1948:
+D.1953 = sum;
+D.1953 = 0;

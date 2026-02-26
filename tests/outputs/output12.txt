@@ -1,0 +1,55 @@
+Command: /home/shyam/Desktop/Projects/compiler/main /home/shyam/Desktop/Projects/compiler/tests/test12.c
+----------------------------------------
+Parsed 23 instructions from GIMPLE
+Printed 23 non-dead instructions
+Printed 23 non-dead instructions
+Original GIMPLE:
+a = 0;
+b = 0;
+i = 0;
+goto D.1950;
+D.1949:
+a = a + i;
+i = i + 1;
+D.1950:
+if (i <= 9) goto D.1949;
+goto D.1947;
+D.1947:
+i = 0;
+goto D.1954;
+D.1953:
+_1 = i * 2;
+b = b + _1;
+i = i + 1;
+D.1954:
+if (i <= 9) goto D.1953;
+goto D.1951;
+D.1951:
+D.1956 = a + b;
+D.1956 = 0;
+Optimization completed in 2 iterations.
+
+Optimized GIMPLE:
+a = 0;
+b = 0;
+i = 0;
+goto D.1950;
+D.1949:
+a = a + i;
+i = i + 1;
+D.1950:
+if (i <= 9) goto D.1949;
+goto D.1947;
+D.1947:
+i = 0;
+goto D.1954;
+D.1953:
+_1 = i << 1;
+b = b + _1;
+i = i + 1;
+D.1954:
+if (i <= 9) goto D.1953;
+goto D.1951;
+D.1951:
+D.1956 = a + b;
+D.1956 = 0;

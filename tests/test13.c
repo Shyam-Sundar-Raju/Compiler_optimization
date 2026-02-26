@@ -1,0 +1,10 @@
+// Optimization technique: Function Inlining
+int add_one(int x) {
+    return x + 1;
+}
+
+int main() {
+    int a = 10;
+    int b = add_one(a);
+    return b;
+}

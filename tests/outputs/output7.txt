@@ -1,0 +1,21 @@
+Command: /home/shyam/Desktop/Projects/compiler/main /home/shyam/Desktop/Projects/compiler/tests/test7.c
+----------------------------------------
+Parsed 6 instructions from GIMPLE
+Printed 6 non-dead instructions
+Printed 6 non-dead instructions
+Original GIMPLE:
+x = 11;
+y = x;
+z = y;
+w = z;
+D.1949 = w;
+D.1949 = 0;
+Optimization completed in 2 iterations.
+
+Optimized GIMPLE:
+x = 11;
+y = 11;
+z = 11;
+w = 11;
+D.1949 = 11;
+D.1949 = 0;

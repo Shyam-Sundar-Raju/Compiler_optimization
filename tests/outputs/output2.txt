@@ -1,0 +1,19 @@
+Command: /home/shyam/Desktop/Projects/compiler/main /home/shyam/Desktop/Projects/compiler/tests/test2.c
+----------------------------------------
+Parsed 5 instructions from GIMPLE
+Printed 5 non-dead instructions
+Printed 5 non-dead instructions
+Original GIMPLE:
+x = 42;
+y = x + 8;
+z = y * 2;
+D.1948 = z - x;
+D.1948 = 0;
+Optimization completed in 3 iterations.
+
+Optimized GIMPLE:
+x = 42;
+y = 50;
+z = 50 << 1;
+D.1948 = z - 42;
+D.1948 = 0;

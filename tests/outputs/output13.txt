@@ -1,0 +1,19 @@
+Command: /home/shyam/Desktop/Projects/compiler/main /home/shyam/Desktop/Projects/compiler/tests/test13.c
+----------------------------------------
+Parsed 5 instructions from GIMPLE
+Printed 5 non-dead instructions
+Printed 5 non-dead instructions
+Original GIMPLE:
+D.1950 = x + 1;
+a = 10;
+b = call add_one;
+D.1952 = b;
+D.1952 = 0;
+Optimization completed in 1 iterations.
+
+Optimized GIMPLE:
+D.1950 = x + 1;
+a = 10;
+b = call add_one;
+D.1952 = b;
+D.1952 = 0;
