@@ -1,8 +1,8 @@
-Command: /home/shyam/Desktop/Projects/compiler/main /home/shyam/Desktop/Projects/compiler/tests/test6.c
+Command: /home/shyam/Desktop/Projects/Compiler_optimization/main /home/shyam/Desktop/Projects/Compiler_optimization/tests/unreachable_code_elimination.c 15
 ----------------------------------------
 Parsed 9 instructions from GIMPLE
 Printed 9 non-dead instructions
-Printed 9 non-dead instructions
+Printed 6 non-dead instructions
 Original GIMPLE:
 x = 3;
 if (x > 0) goto D.1946;
@@ -13,7 +13,7 @@ x = x + 100;
 D.1947:
 D.1948 = 0;
 D.1948 = 0;
-Optimization completed in 1 iterations.
+Optimization #15 completed in 2 iterations.
 
 Optimized GIMPLE:
 x = 3;
@@ -22,6 +22,3 @@ goto D.1947;
 D.1946:
 D.1948 = 1;
 x = x + 100;
-D.1947:
-D.1948 = 0;
-D.1948 = 0;

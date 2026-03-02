@@ -2,6 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 
+void compute_liveness(ControlFlowGraph *cfg, LivenessSet *liveness_result);
+void compute_dominators(ControlFlowGraph *cfg);
+void detect_loops(ControlFlowGraph *cfg);
+void free_cfg(ControlFlowGraph *cfg);
+
 static int is_block_terminator(GimpleInst *inst) {
     return inst->type == G_GOTO || inst->type == G_COND || inst->type == G_RETURN;
 }
@@ -108,6 +113,9 @@ ControlFlowGraph build_cfg(FunctionIR *ir) {
         }
     }
     
+    compute_dominators(&cfg);
+    detect_loops(&cfg);
+
     return cfg;
 }
 

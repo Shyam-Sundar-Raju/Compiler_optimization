@@ -1,0 +1,31 @@
+Command: /home/shyam/Desktop/Projects/Compiler_optimization/main /home/shyam/Desktop/Projects/Compiler_optimization/tests/function_cloning.c 8
+----------------------------------------
+Parsed 11 instructions from GIMPLE
+Printed 11 non-dead instructions
+Printed 11 non-dead instructions
+Original GIMPLE:
+if (x > 100) goto D.1950;
+goto D.1951;
+D.1950:
+_1 = x * 2;
+D.1952 = _1 + 1;
+D.1951:
+D.1952 = x + 3;
+a = call compute(5);
+b = call compute(200);
+D.1954 = a + b;
+D.1954 = 0;
+Optimization #8 completed in 2 iterations.
+
+Optimized GIMPLE:
+if (x > 100) goto D.1950;
+goto D.1951;
+D.1950:
+_1 = x * 2;
+D.1952 = _1 + 1;
+D.1951:
+D.1952 = x + 3;
+a = call compute(5);
+b = call compute_clone(200);
+D.1954 = a + b;
+D.1954 = 0;

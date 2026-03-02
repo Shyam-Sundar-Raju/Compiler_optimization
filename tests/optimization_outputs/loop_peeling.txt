@@ -1,0 +1,85 @@
+Command: /home/shyam/Desktop/Projects/Compiler_optimization/main /home/shyam/Desktop/Projects/Compiler_optimization/tests/loop_peeling.c 12
+----------------------------------------
+Parsed 28 instructions from GIMPLE
+Printed 28 non-dead instructions
+Printed 48 non-dead instructions
+Original GIMPLE:
+arr[0] = 1;
+arr[1] = 2;
+arr[2] = 3;
+arr[3] = 4;
+arr[4] = 5;
+sum = 0;
+i = 0;
+goto D.1950;
+D.1949:
+if (i == 0) goto D.1952;
+goto D.1953;
+D.1952:
+_1 = arr[i];
+_2 = _1 * 2;
+sum = sum + _2;
+goto D.1954;
+D.1953:
+_3 = arr[i];
+sum = sum + _3;
+D.1954:
+i = i + 1;
+D.1950:
+if (i <= 4) goto D.1949;
+goto D.1947;
+D.1947:
+D.1955 = sum;
+arr = {CLOBBER};
+D.1955 = 0;
+Optimization #12 completed in 20 iterations.
+
+Optimized GIMPLE:
+arr[0] = 1;
+arr[1] = 2;
+arr[2] = 3;
+arr[3] = 4;
+arr[4] = 5;
+sum = 0;
+i = 0;
+goto D.1950;
+D.1949:
+if (i == 0) goto D.1952;
+goto D.1953;
+D.1952:
+D.1952:
+D.1952:
+D.1952:
+D.1952:
+D.1952:
+D.1952:
+D.1952:
+D.1952:
+D.1952:
+D.1952:
+D.1952:
+D.1952:
+D.1952:
+D.1952:
+D.1952:
+D.1952:
+D.1952:
+D.1952:
+D.1952:
+D.1952:
+_1 = arr[i];
+_2 = _1 * 2;
+sum = sum + _2;
+goto D.1954;
+D.1953:
+_3 = arr[i];
+sum = sum + _3;
+D.1954:
+i = i + 1;
+D.1950:
+if (i <= 4) goto D.1949;
+goto D.1947;
+D.1947:
+D.1955 = sum;
+arr = {CLOBBER};
+D.1955 = 0;

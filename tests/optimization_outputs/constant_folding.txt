@@ -1,4 +1,4 @@
-Command: /home/shyam/Desktop/Projects/compiler/main /home/shyam/Desktop/Projects/compiler/tests/test1.c
+Command: /home/shyam/Desktop/Projects/Compiler_optimization/main /home/shyam/Desktop/Projects/Compiler_optimization/tests/constant_folding.c 4
 ----------------------------------------
 Parsed 4 instructions from GIMPLE
 Printed 4 non-dead instructions
@@ -8,10 +8,10 @@ a = 44;
 b = 24;
 D.1947 = a + b;
 D.1947 = 0;
-Optimization completed in 2 iterations.
+Optimization #4 completed in 1 iterations.
 
 Optimized GIMPLE:
 a = 44;
 b = 24;
-D.1947 = 68;
+D.1947 = a + b;
 D.1947 = 0;

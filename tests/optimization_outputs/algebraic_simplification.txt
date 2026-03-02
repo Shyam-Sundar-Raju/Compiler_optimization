@@ -1,4 +1,4 @@
-Command: /home/shyam/Desktop/Projects/compiler/main /home/shyam/Desktop/Projects/compiler/tests/test7.c
+Command: /home/shyam/Desktop/Projects/Compiler_optimization/main /home/shyam/Desktop/Projects/Compiler_optimization/tests/algebraic_simplification.c 1
 ----------------------------------------
 Parsed 6 instructions from GIMPLE
 Printed 6 non-dead instructions
@@ -10,12 +10,12 @@ z = y;
 w = z;
 D.1949 = w;
 D.1949 = 0;
-Optimization completed in 2 iterations.
+Optimization #1 completed in 1 iterations.
 
 Optimized GIMPLE:
 x = 11;
-y = 11;
-z = 11;
-w = 11;
-D.1949 = 11;
+y = x;
+z = y;
+w = z;
+D.1949 = w;
 D.1949 = 0;

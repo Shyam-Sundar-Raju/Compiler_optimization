@@ -65,9 +65,9 @@ int dead_code_elimination(FunctionIR *ir) {
 				strchr(instruction->dest, ']') != NULL ||
 				strchr(instruction->dest, '*') != NULL;
 
-			int removable_temp = instruction->dest[0] == '_';
+			int compiler_generated_result = strncmp(instruction->dest, "D.", 2) == 0;
 			int live_dest = dce_find(used, used_count, instruction->dest) >= 0;
-			if (!live_dest && removable_temp && !side_effect_assignment) {
+			if (!live_dest && !side_effect_assignment && !compiler_generated_result) {
 				instruction->is_dead = 1;
 				changed = 1;
 				continue;

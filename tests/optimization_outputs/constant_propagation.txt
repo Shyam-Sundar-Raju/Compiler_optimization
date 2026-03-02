@@ -1,4 +1,4 @@
-Command: /home/shyam/Desktop/Projects/compiler/main /home/shyam/Desktop/Projects/compiler/tests/test2.c
+Command: /home/shyam/Desktop/Projects/Compiler_optimization/main /home/shyam/Desktop/Projects/Compiler_optimization/tests/constant_propagation.c 2
 ----------------------------------------
 Parsed 5 instructions from GIMPLE
 Printed 5 non-dead instructions
@@ -9,11 +9,11 @@ y = x + 8;
 z = y * 2;
 D.1948 = z - x;
 D.1948 = 0;
-Optimization completed in 3 iterations.
+Optimization #2 completed in 2 iterations.
 
 Optimized GIMPLE:
 x = 42;
-y = 50;
-z = 50 << 1;
+y = 42 + 8;
+z = y * 2;
 D.1948 = z - 42;
 D.1948 = 0;

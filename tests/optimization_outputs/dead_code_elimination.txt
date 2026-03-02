@@ -1,0 +1,18 @@
+Command: /home/shyam/Desktop/Projects/Compiler_optimization/main /home/shyam/Desktop/Projects/Compiler_optimization/tests/dead_code_elimination.c 14
+----------------------------------------
+Parsed 5 instructions from GIMPLE
+Printed 5 non-dead instructions
+Printed 4 non-dead instructions
+Original GIMPLE:
+x = 10;
+y = x + 5;
+unused = y * 100;
+D.1948 = y;
+D.1948 = 0;
+Optimization #14 completed in 2 iterations.
+
+Optimized GIMPLE:
+x = 10;
+y = x + 5;
+D.1948 = y;
+D.1948 = 0;

@@ -1,8 +1,8 @@
-Command: /home/shyam/Desktop/Projects/compiler/main /home/shyam/Desktop/Projects/compiler/tests/test10.c
+Command: /home/shyam/Desktop/Projects/Compiler_optimization/main /home/shyam/Desktop/Projects/Compiler_optimization/tests/induction_variable_elimination.c 10
 ----------------------------------------
 Parsed 14 instructions from GIMPLE
 Printed 14 non-dead instructions
-Printed 14 non-dead instructions
+Printed 13 non-dead instructions
 Original GIMPLE:
 j = 0;
 sum = 0;
@@ -18,7 +18,7 @@ goto D.1947;
 D.1947:
 D.1952 = sum;
 D.1952 = 0;
-Optimization completed in 2 iterations.
+Optimization #10 completed in 2 iterations.
 
 Optimized GIMPLE:
 j = 0;
@@ -26,9 +26,8 @@ sum = 0;
 i = 0;
 goto D.1950;
 D.1949:
-j = i << 2;
+j = i * 4;
 sum = sum + j;
-i = i + 1;
 D.1950:
 if (i <= 9) goto D.1949;
 goto D.1947;

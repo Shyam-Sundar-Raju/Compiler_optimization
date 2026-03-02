@@ -253,6 +253,9 @@ FunctionIR parse_gimple_file(const char *filename) {
             if (token_count > 1 && strcmp(tokens[1], "NULL") != 0) {
                 copy_field(ins->dest, sizeof(ins->dest), tokens[1]);
             }
+            if (token_count > 2 && strcmp(tokens[2], "NULL") != 0) {
+                copy_field(ins->arg2, sizeof(ins->arg2), tokens[2]);
+            }
             ir.count++;
         }
     }

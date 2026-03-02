@@ -1,4 +1,4 @@
-Command: /home/shyam/Desktop/Projects/compiler/main /home/shyam/Desktop/Projects/compiler/tests/test13.c
+Command: /home/shyam/Desktop/Projects/Compiler_optimization/main /home/shyam/Desktop/Projects/Compiler_optimization/tests/function_inlining.c 7
 ----------------------------------------
 Parsed 5 instructions from GIMPLE
 Printed 5 non-dead instructions
@@ -6,14 +6,14 @@ Printed 5 non-dead instructions
 Original GIMPLE:
 D.1950 = x + 1;
 a = 10;
-b = call add_one;
+b = call add_one(a);
 D.1952 = b;
 D.1952 = 0;
-Optimization completed in 1 iterations.
+Optimization #7 completed in 2 iterations.
 
 Optimized GIMPLE:
 D.1950 = x + 1;
 a = 10;
-b = call add_one;
+b = a + 1;
 D.1952 = b;
 D.1952 = 0;
